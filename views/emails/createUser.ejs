@@ -1,0 +1,24 @@
+<div class="mail-container">
+  <div class="body-container">
+    <%- include('./partials/header') -%>
+
+    <div class="mail-title">h_k</div>
+
+    <div class="heading-1">New Account Registered.</div>
+    <div class="heading-2">
+      Please verify your created account by clicking this following link:
+    </div>
+
+    <div class="btn-box">
+      <a href="<%= verifyEmailLink %>" class="btn btn-primary"
+        >Verify Account</a
+      >
+    </div>
+
+    <span class="igonore-msg">
+      If you have not requested an account registration, please ignore this
+      email.
+    </span>
+    <%- include('./partials/footer') -%>
+  </div>
+</div>

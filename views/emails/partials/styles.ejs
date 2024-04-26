@@ -1,0 +1,384 @@
+<style tyle="text/css">
+  @import url("https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap");
+
+  body {
+    font-family: sans-serif;
+    font-weight: 400;
+    line-height: 21px;
+    /* font-size: 18px; */
+    font-family: "Roboto", sans-serif;
+  }
+
+  .container {
+    margin: 0 auto;
+  }
+  .mail-container {
+    margin: auto;
+    background-color: #273757a2;
+    box-sizing: border-box;
+    box-shadow: 2px #999;
+    width: 100%;
+    height: 100%;
+  }
+
+  .body-container {
+    margin: auto;
+    background-color: rgb(255, 255, 255);
+    box-sizing: border-box;
+    box-shadow: 2px #999;
+    border-radius: 1px;
+    width: 80%;
+    height: 40%;
+  }
+
+  .mail-title {
+    text-align: center;
+    font-size: 24px;
+    color: #fff;
+    background-color: #136ab3;
+    padding: 15px;
+  }
+
+  .wrapper-contain {
+    width: 464px;
+    margin: 0 auto;
+  }
+
+  .bold {
+    font-weight: bold;
+  }
+
+  .header,
+  .content,
+  .footer {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .footer {
+    /* background-color: #3D3D3D;
+      color: #fff; */
+  }
+
+  .footer a {
+    /* color: #fff; */
+  }
+
+  .horizontal-line {
+    border-bottom: 1px solid #eee;
+  }
+
+  .brand {
+    width: 200px;
+  }
+
+  .heading-1 {
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 40px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #136ab3;
+  }
+  .heading-2 {
+    color: #d2dae2;
+    font-size: 18px;
+    text-align: center;
+  }
+  .password {
+    text-align: center;
+    font-size: 16px;
+    color: #1e272e;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .regards {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .igonore-msg {
+    text-align: center;
+  }
+
+  .btn-box {
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .password {
+    text-align: center;
+    font-size: 18;
+  }
+
+  .container {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .btn {
+    font-weight: 600;
+    letter-spacing: 0em;
+    line-height: 2.4rem;
+    margin: 0;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    padding: 12px 16px;
+    box-sizing: border-box;
+    text-align: center;
+    border: 0;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.16);
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    width: 400px;
+    height: 60px;
+    margin-top: 10px;
+  }
+
+  .btn-primary {
+    background-color: #136ab3;
+    color: rgb(255, 255, 255) !important;
+  }
+
+  .description {
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+  }
+
+  pre code {
+    background-color: #eee;
+    border: 1px solid #999;
+    display: block;
+    padding: 0 10px;
+  }
+
+  .summary-log {
+    background: lightgrey;
+    padding: 10px;
+    font-style: italic;
+  }
+
+  .right-alignment {
+    text-align: right;
+  }
+
+  .left-alignment {
+    text-align: left;
+  }
+
+  .center-alignment {
+    text-align: center;
+  }
+
+  .summary-container {
+    width: 100%;
+    background-color: white;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #member-container {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  #member-container td,
+  #member-container th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    border-radius: 5px;
+  }
+
+  #member-container tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  #member-container tr:hover {
+    background-color: #ddd;
+  }
+
+  #member-container th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+  }
+
+  #member-container {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  #fee-container td,
+  #fee-container th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+
+  #fee-container tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  #fee-container th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+  }
+
+  #fee-container td {
+    text-align: right;
+  }
+
+  .main-heading {
+    text-align: center;
+  }
+
+  .title-group {
+    background-color: #136ab3;
+    color: #fff;
+    padding: 4px;
+    border-radius: 2px;
+  }
+  .invoice-box {
+    max-width: 100%;
+    /* padding: 3px; */
+    font-size: 16px;
+    line-height: 24px;
+    font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+    color: #555;
+  }
+
+  .invoice-box table {
+    width: 100%;
+    line-height: inherit;
+    text-align: left;
+    border-collapse: collapse;
+    margin: auto;
+  }
+
+  .invoice-box table td {
+    margin-top: 2px;
+    padding: 5px;
+    vertical-align: top;
+  }
+
+  .invoice-box table tr td:nth-child(2) {
+    text-align: right;
+  }
+
+  .invoice-box table tr.top table td {
+    padding-bottom: 20px;
+  }
+
+  .invoice-box table tr.top table td.title {
+    font-size: 30px;
+    line-height: 45px;
+    color: #333;
+  }
+
+  .invoice-box table tr.heading td {
+    background: #eee;
+    border-bottom: 1px solid #ddd;
+    font-weight: bold;
+  }
+
+  .invoice-box table tr.details td {
+    padding-bottom: 20px;
+  }
+
+  .invoice-box table tr.item td {
+    border-bottom: 1px solid #eee;
+  }
+
+  .invoice-box table tr.item.last td {
+    border-bottom: none;
+  }
+
+  .invoice-box table tr.total td:nth-child(2) {
+    border-top: 2px solid #eee;
+    font-weight: bold;
+  }
+
+  .grid-fee-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 1px;
+  }
+
+  .grid-item {
+    padding: 2px;
+    font-size: 14px;
+  }
+
+  .left-align {
+    text-align: left;
+  }
+
+  .right-align {
+    text-align: right;
+  }
+
+  .group-table {
+    padding: 10px;
+  }
+
+  #customers {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  #payments {
+    margin-top: 5px;
+  }
+
+  #payments td,
+  #payments th {
+    border: 1px solid #ddd;
+    padding: 4px;
+  }
+
+  #payments tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  #payments tr:hover {
+    background-color: #ddd;
+  }
+
+  #payments th {
+    padding-top: 4px;
+    padding-bottom: 4px;
+    background-color: #2c3e50;
+    color: white;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .invoice-box table tr.top table td {
+      width: 100%;
+      display: block;
+      text-align: center;
+    }
+
+    .invoice-box table tr.information table td {
+      width: 100%;
+      display: block;
+      text-align: center;
+    }
+  }
+</style>
