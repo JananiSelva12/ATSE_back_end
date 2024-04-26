@@ -1,0 +1,8 @@
+FROM debian:bullseye-slim
+
+RUN apt-get update && apt-get install -y htop
+
+FROM mysql:5.7
+
+COPY ./mysql-script.sh /docker-entrypoint-initdb.d/mysql-script.sh
+RUN chmod 0666 /docker-entrypoint-initdb.d/mysql-script.sh

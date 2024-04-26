@@ -1,0 +1,55 @@
+version: '3'
+services:
+  server:
+    container_name: hk-app
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    depends_on:
+      - hk-db
+      - redis
+    ports:
+      - '8000:8000'
+    environment:
+      - NODE_ENV=${NODE_ENV}
+      - MYSQL_PORT=${MYSQL_PORT}
+      - MYSQL_HOST=${MYSQL_HOST}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+    volumes:
+      - ./:/usr/src/app
+    networks: 
+      - hk-network
+    command: npm run start
+  hk-db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      # - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+    env_file:
+      - ./.env
+    ports:
+      - '3307:3306'
+    volumes:
+      - hk-db-data:/var/lib/mysql
+    networks: 
+      - hk-network
+  redis:
+    image: redis:alpine
+    container_name: hk-redis
+    ports:
+      - '${REDIS_PORT}:6379'
+    volumes:
+      - redis-data:/data
+    networks: 
+      - hk-network
+volumes:
+  hk-db-data:
+  redis-data:
+networks:
+  hk-network:
+  
